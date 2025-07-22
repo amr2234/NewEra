@@ -25,9 +25,6 @@ declare var $: any;
     BrandsComponent,
     CallComponent,
     TechnologiesComponent,
-    BlogComponent,
-    TestimonialComponent,
-    CallToActionComponent
   ],
   templateUrl: './home-page.html',
   styleUrl: './home-page.css'
