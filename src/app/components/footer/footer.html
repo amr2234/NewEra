@@ -1,0 +1,30 @@
+<footer class="footer-modern">
+  <div class="footer-modern-container">
+    <img src="assets/images/sitvalue.png" alt="Logo" class="footer-modern-logo" />
+	<a class="stiky-logo" routerLink="/"><img src="assets/images/sitvalue.png" alt=""></a>
+    <div class="footer-modern-info-row fade-in">
+      <div class="footer-modern-info-item">
+        <div class="footer-modern-label">{{ 'FOOTER_OFFICE' | translate }}</div>
+        <div class="footer-modern-value">{{ 'FOOTER_OFFICE_NAME' | translate }}</div>
+      </div>
+      <div class="footer-modern-info-item">
+        <div class="footer-modern-label">{{ 'FOOTER_HOURS' | translate }}</div>
+        <div class="footer-modern-value">
+          {{ 'FOOTER_HOURS_DAYS' | translate }}<br>
+          {{ 'FOOTER_HOURS_TIME' | translate }}
+        </div>
+      </div>
+      <div class="footer-modern-info-item">
+        <div class="footer-modern-label">{{ 'FOOTER_CALL_US' | translate }}</div>
+        <div class="footer-modern-value">{{ 'FOOTER_PHONE_NUMBER' | translate }}</div>
+      </div>
+      <div class="footer-modern-info-item">
+        <div class="footer-modern-label">{{ 'FOOTER_EMAIL_LABEL' | translate }}</div>
+        <div class="footer-modern-value">{{ 'FOOTER_EMAIL' | translate }}</div>
+      </div>
+    </div>
+    <div class="footer-modern-bottom">
+      <span>{{ 'FOOTER_COPYRIGHT' | translate:{ year: currentYear } }}</span>
+    </div>
+  </div>
+</footer>

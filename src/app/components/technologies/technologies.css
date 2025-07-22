@@ -1,0 +1,261 @@
+/* Technologies Section Styles */
+
+.technologies-section {
+  /* background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%); */
+  position: relative;
+  overflow: hidden;
+}
+
+.technologies-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: url('/assets/images/technologies/background.png');
+  /* background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grid" width="10" height="10" patternUnits="userSpaceOnUse"><path d="M 10 0 L 0 0 0 10" fill="none" stroke="rgba(0,0,0,0.05)" stroke-width="0.5"/></pattern></defs><rect width="100" height="100" fill="url(%23grid)"/></svg>'); */
+  opacity: 0.3;
+  z-index: 1;
+}
+
+.technologies-section .container {
+  position: relative;
+  z-index: 2;
+}
+
+.technologies-section .dreamit-section-sub-title h5 {
+  color: var(--secondary-color);
+  font-size: 18px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin-bottom: 15px;
+  font-family: 'Cairo', sans-serif;
+}
+
+.technologies-section .dreamit-section-main-title h2 {
+  color: var(--primary-color);
+  font-size: 42px;
+  font-weight: 700;
+  margin-bottom: 20px;
+  font-family: 'Cairo', sans-serif;
+  text-align: center !important;
+}
+
+.technologies-section .dreamit-section-main-title h2 span {
+  color: var(--secondary-color);
+  text-align: center !important;
+}
+
+.technologies-section .dreamit-section-content-text p {
+  color: #000000;
+  font-size: 25px;
+  line-height: 1.6;
+  /* max-width: 600px; */
+  margin: 0 auto;
+  font-family: 'Cairo', sans-serif;
+}
+
+@media only screen and (min-width: 320px) and (max-width: 480px) {
+  .technologies-section .dreamit-section-content-text p {
+    font-size: 20px;
+  }
+}
+/* Carousel Styles */
+.technologies-carousel-wrapper {
+  position: relative;
+  padding: 20px 0;
+  overflow: hidden;
+}
+
+.technologies-carousel {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+}
+
+.carousel-track {
+  display: flex;
+  animation: scroll 30s linear infinite;
+  width: calc(220px * 24); /* 12 items * 2 sets * (200px + 20px gap) each */
+  gap: 20px; /* Add gap between items */
+}
+
+.carousel-track:hover {
+  animation-play-state: paused;
+}
+
+.technology-item {
+  text-align: center;
+  padding: 20px;
+  transition: all 0.3s ease;
+  background: white;
+  border-radius: 15px;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+  margin: 10px;
+  position: relative;
+  overflow: hidden;
+  min-width: 180px;
+  flex-shrink: 0;
+}
+
+.technology-item::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4), transparent);
+  transition: left 0.5s ease;
+}
+
+.technology-item:hover::before {
+  left: 100%;
+}
+
+.technology-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+}
+
+.technology-logo {
+  margin-bottom: 15px;
+  height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.technology-logo img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+  filter: grayscale(100%);
+  transition: all 0.3s ease;
+  opacity: 0.7;
+}
+
+.technology-item:hover .technology-logo img {
+  filter: grayscale(0%);
+  opacity: 1;
+  transform: scale(1.1);
+}
+
+.technology-name {
+  margin-top: 10px;
+}
+
+.technology-name span {
+  color: var(--primary-color);
+  font-size: 14px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-family: 'Cairo', sans-serif;
+}
+
+/* Infinite scroll animation */
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(calc(-220px * 12)); /* Move by exactly half the total width for seamless loop */
+  }
+}
+
+/* RTL Support */
+body.rtl .technologies-section .dreamit-section-sub-title h5 {
+  text-align: right;
+}
+
+body.rtl .technologies-section .dreamit-section-main-title h2 {
+  text-align: right;
+}
+
+body.rtl .technologies-section .dreamit-section-content-text p {
+  text-align: right;
+}
+
+body.rtl .technology-item {
+  text-align: center;
+}
+
+/* RTL Carousel Animation */
+body.rtl .carousel-track,
+.carousel-track.rtl-track {
+  animation: scroll-rtl 30s linear infinite;
+  direction: rtl;
+}
+
+@keyframes scroll-rtl {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(calc(220px * 12)); /* Move right for RTL */
+  }
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+  .technologies-section .dreamit-section-main-title h2 {
+    font-size: 32px;
+  }
+  
+  .technology-logo {
+    height: 60px;
+  }
+  
+  .technology-name span {
+    font-size: 12px;
+  }
+}
+
+@media (max-width: 576px) {
+  .technologies-section .dreamit-section-main-title h2 {
+    font-size: 28px;
+  }
+  
+  .technology-item {
+    padding: 15px;
+    margin: 5px;
+  }
+  
+  .technology-logo {
+    height: 50px;
+  }
+}
+
+/* Animation for carousel items */
+@keyframes slideInFromRight {
+  from {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slideInFromLeft {
+  from {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+.technologies-carousel .owl-item {
+  animation: slideInFromRight 0.6s ease-out;
+}
+
+.technologies-carousel .owl-item:nth-child(even) {
+  animation: slideInFromLeft 0.6s ease-out;
+} 

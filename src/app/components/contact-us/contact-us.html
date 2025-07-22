@@ -1,0 +1,114 @@
+<!--==================================================-->
+<!--START CONTACT US SECTION-->
+<!--===================================================-->
+<div class="contact-section pt-20 pb-20" id="contact">
+	<div class="container">
+		<div class="row">
+			<div class="col-lg-12 col-md-6">
+				<div class="single-contact-from-box wow fadeInUp" data-wow-delay=".2s">
+					<div class="dreamit-section-title pb-30">
+					
+						<div class="section-main-title wow fadeInUp" data-wow-delay=".3s">
+							<h2> <span>{{ 'CONTACT_CONTACT' | translate }}</span></h2>
+						</div>
+					</div>
+					
+					<div class="contact_from wow fadeInUp" data-wow-delay=".2s">
+						<form [formGroup]="contactForm" (ngSubmit)="onSubmit()" id="contact_form">
+							<div class="row">
+								<div class="col-lg-6">
+									<div class="form_box mb-2">
+										<div class="form-title">{{ 'CONTACT_YOUR_NAME' | translate }} *</div>
+										<input 
+											class="form-control" 
+											type="text" 
+											formControlName="name" 
+											[class.is-invalid]="submitted && contactForm.get('name')?.errors"
+										>
+										<div class="invalid-feedback" *ngIf="submitted && contactForm.get('name')?.errors">
+											<div *ngIf="contactForm.get('name')?.errors?.['required']">{{ 'CONTACT_NAME_REQUIRED' | translate }}</div>
+											<div *ngIf="contactForm.get('name')?.errors?.['minlength']">{{ 'CONTACT_NAME_MIN_LENGTH' | translate }}</div>
+										</div>
+									</div>
+								</div>
+								<div class="col-lg-6">
+									<div class="form_box mb-2">
+										<div class="form-title">{{ 'CONTACT_YOUR_EMAIL' | translate }} *</div>
+										<input 
+											class="form-control" 
+											type="email" 
+											formControlName="email" 
+											[class.is-invalid]="submitted && contactForm.get('email')?.errors"
+										>
+										<div class="invalid-feedback" *ngIf="submitted && contactForm.get('email')?.errors">
+											<div *ngIf="contactForm.get('email')?.errors?.['required']">{{ 'CONTACT_EMAIL_REQUIRED' | translate }}</div>
+											<div *ngIf="contactForm.get('email')?.errors?.['email']">{{ 'CONTACT_EMAIL_INVALID' | translate }}</div>
+										</div>
+									</div>
+								</div>
+								<div class="col-lg-6">
+									<div class="form_box mb-2">
+										<div class="form-title">{{ 'CONTACT_MOBILE_NO' | translate }} *</div>
+										<input 
+											class="form-control" 
+											type="text" 
+											formControlName="phone"
+											[class.is-invalid]="submitted && contactForm.get('phone')?.errors">
+										
+										<div class="invalid-feedback" *ngIf="submitted && contactForm.get('phone')?.errors">
+											<div *ngIf="contactForm.get('phone')?.errors?.['required']">{{ 'CONTACT_PHONE_REQUIRED' | translate }}</div>
+											<div *ngIf="contactForm.get('phone')?.errors?.['pattern']">{{ 'CONTACT_PHONE_INVALID' | translate }}</div>
+										</div>
+									</div>
+								</div>
+								<div class="col-lg-6">
+									<div class="form_box mb-2">
+										<div class="form-title">{{ 'CONTACT_SUBJECT' | translate }} *</div>
+										<input 
+											class="form-control" 
+											type="text" 
+											formControlName="subject" 
+											[class.is-invalid]="submitted && contactForm.get('subject')?.errors"
+										>
+										<div class="invalid-feedback" *ngIf="submitted && contactForm.get('subject')?.errors">
+											<div *ngIf="contactForm.get('subject')?.errors?.['required']">{{ 'CONTACT_SUBJECT_REQUIRED' | translate }}</div>
+											<div *ngIf="contactForm.get('subject')?.errors?.['minlength']">{{ 'CONTACT_SUBJECT_MIN_LENGTH' | translate }}</div>
+										</div>
+									</div>
+								</div>
+								<div class="col-lg-12">
+									<div class="form_box pt-1">
+										<div class="form-title">{{ 'CONTACT_WRITING_MESSAGE' | translate }} *</div>
+										<textarea 
+											class="form-control" 
+											formControlName="message" 
+											id="message" 
+											cols="10" 
+											rows="5" 
+											[class.is-invalid]="submitted && contactForm.get('message')?.errors"
+										></textarea>
+										<div class="invalid-feedback" *ngIf="submitted && contactForm.get('message')?.errors">
+											<div *ngIf="contactForm.get('message')?.errors?.['required']">{{ 'CONTACT_MESSAGE_REQUIRED' | translate }}</div>
+											<div *ngIf="contactForm.get('message')?.errors?.['minlength']">{{ 'CONTACT_MESSAGE_MIN_LENGTH' | translate }}</div>
+										</div>
+									</div>
+								</div>
+								<div class="quote_btn text_center mt-15">
+									<button 
+										class="btn" 
+										type="submit" 
+										[disabled]="isLoading"
+									>
+										<span *ngIf="!isLoading">{{ 'CONTACT_GET_A_QUOTE_NOW' | translate }} <i class="flaticon-arrow-pointing-to-right"></i></span>
+										<span *ngIf="isLoading">{{ 'CONTACT_SENDING' | translate }}...</span>
+									</button>
+								</div>
+							</div>
+						</form>
+						<p class="form-message"></p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div> 

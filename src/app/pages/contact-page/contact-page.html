@@ -1,0 +1,111 @@
+<!--==================================================-->
+<!--START CONTACT PAGE-->
+<!--===================================================-->
+<app-header [headerStyle]="'style-contact'"></app-header>
+<!-- Breadcrumb Section -->
+<div class="breatcome-area pt-40 pb-40">
+    <!-- <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="breatcome-content text-center">
+                    <div class="breatcome-content-text wow fadeInUp" data-wow-delay=".4s">
+                        <ul>
+                            <li *ngFor="let item of pageInfo.breadcrumb; let last = last">
+                                <a [routerLink]="item.link" [class.active]="item.active">
+                                    {{ item.label | translate }}
+                                </a>
+                                <i *ngIf="!last" class="flaticon-arrow-pointing-to-right"></i>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div> -->
+</div>
+
+<!-- Page Description Section -->
+<!-- <div class="page-description-section pt-60 pb-60">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-lg-8">
+                <div class="page-description-content text-center wow fadeInUp" data-wow-delay=".3s">
+                    <h2>{{ pageInfo.subtitle | translate }}</h2>
+                    <p>{{ pageInfo.description | translate }}</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div> -->
+
+<!-- Contact Us Component -->
+<app-contact-us></app-contact-us>
+
+<!-- Additional Contact Information -->
+<div class="additional-contact-section pt-60 pb-80">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="section-title text-center mb-50">
+                    <div class="section-main-title wow fadeInUp" data-wow-delay=".3s">
+                        <h2><span>{{ 'CONTACT_TO_REACH' | translate }}</span></h2>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="row">
+            <div class="col-lg-4 col-md-6 mb-4">
+                <div class="additional-contact-card wow fadeInUp" data-wow-delay=".2s">
+                    <div class="card-icon">
+                        <i class="flaticon-clock"></i>
+                    </div>
+                    <div class="card-content">
+                        <h4>{{ 'CONTACT_BUSINESS_HOURS' | translate }}</h4>
+                        <p>{{ 'CONTACT_BUSINESS_HOURS_DESC' | translate }}</p>
+                        <ul class="hours-list">
+                            <li><span>{{ 'CONTACT_MONDAY_FRIDAY' | translate }}:</span> 9:00 AM - 6:00 PM</li>
+                            <li><span>{{ 'CONTACT_SATURDAY' | translate }}:</span> 10:00 AM - 4:00 PM</li>
+                            <li><span>{{ 'CONTACT_SUNDAY' | translate }}:</span> {{ 'CONTACT_CLOSED' | translate }}</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-lg-4 col-md-6 mb-4">
+                <div class="additional-contact-card wow fadeInUp" data-wow-delay=".3s">
+                    <div class="card-icon">
+                        <i class="flaticon-support"></i>
+                    </div>
+                    <div class="card-content">
+                        <h4>{{ 'CONTACT_SUPPORT' | translate }}</h4>
+                        <p>{{ 'CONTACT_SUPPORT_DESC' | translate }}</p>
+                        <div class="support-info">
+                            <p><strong>{{ 'CONTACT_TECHNICAL_SUPPORT' | translate }}:</strong> supportsitvalue.com</p>
+                            <p><strong>{{ 'CONTACT_EMERGENCY' | translate }}:</strong> +1 (555) 999-8888</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-lg-4 col-md-6 mb-4">
+                <div class="additional-contact-card wow fadeInUp" data-wow-delay=".4s">
+                    <div class="card-icon">
+                        <i class="flaticon-location"></i>
+                    </div>
+                    <div class="card-content">
+                        <h4>{{ 'CONTACT_VISIT_US' | translate }}</h4>
+                        <p>{{ 'CONTACT_VISIT_DESC' | translate }}</p>
+                        <div class="location-info">
+                            <p><strong>{{ 'CONTACT_MAIN_OFFICE' | translate }}:</strong></p>
+                            <p>123 Business Street<br>Suite 100<br>City, State 12345</p>
+                            <a href="https://maps.google.com" target="_blank" class="btn btn-sm btn-outline-primary">
+                                {{ 'CONTACT_GET_DIRECTIONS' | translate }}
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

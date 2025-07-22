@@ -1,0 +1,380 @@
+/* Contact Us Component Styles */
+
+.contact-info-section {
+    background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+    padding: 40px 30px;
+    border-radius: 15px;
+    color: var(--secondary-color);
+    height: 100%;
+    position: relative;
+    overflow: hidden;
+    min-height: 600px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    font-family: 'Cairo', sans-serif;
+}
+
+body.rtl .contact-info-section {
+    text-align: right;
+}
+
+body.rtl .contact-info-section .dreamit-section-sub-title h5 {
+    text-align: right;
+}
+
+body.rtl .contact-info-section .section-main-title h2 {
+    text-align: right;
+}
+
+body.rtl .contact-info-section .dreamit-section-content-text p {
+    text-align: right;
+}
+
+body.rtl .contact-info-cards .single-contact-box {
+    text-align: right;
+    flex-direction: row-reverse;
+}
+
+body.rtl .contact-info-cards .contact-icon {
+    margin-left: 15px;
+    margin-right: 0;
+}
+
+body.rtl .contact-info-cards .contact-content h4 {
+    text-align: right;
+}
+
+body.rtl .contact-info-cards .contact-content p {
+    text-align: right;
+}
+
+body.rtl .single-contact-from-box {
+    text-align: right;
+}
+
+body.rtl .form-title {
+    text-align: right;
+}
+
+body.rtl .form-control {
+    text-align: right;
+    direction: rtl;
+}
+
+body.rtl .invalid-feedback {
+    text-align: right;
+}
+
+.contact-info-section .section-main-title h2 span,
+.single-contact-from-box .section-main-title h2 span {
+    color: var(--secondary-color) !important;
+}
+
+body.rtl .contact-info-section .section-main-title h2 span,
+body.rtl .single-contact-from-box .section-main-title h2 span {
+    text-align: right !important;
+    color: var(--secondary-color) !important;
+}
+
+.contact-info-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(255, 255, 255, 0.1);
+    z-index: 1;
+}
+
+.contact-info-section .dreamit-section-title {
+    position: relative;
+    z-index: 2;
+}
+
+.contact-info-section .dreamit-section-sub-title h5 {
+    color: rgba(255, 255, 255, 0.9);
+    font-size: 16px;
+    font-weight: 500;
+    margin-bottom: 10px;
+}
+
+.contact-info-section .section-main-title h2 {
+    color: white;
+    font-size: 32px;
+    font-weight: 700;
+    margin-bottom: 15px;
+    line-height: 1.2;
+}
+
+.contact-info-section .dreamit-section-content-text p {
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 16px;
+    line-height: 1.6;
+    margin-bottom: 30px;
+}
+
+.contact-info-cards {
+    position: relative;
+    z-index: 2;
+}
+
+.contact-info-cards .single-contact-box {
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 12px;
+    padding: 25px 20px;
+    margin-bottom: 20px;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.contact-info-cards .single-contact-box::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+    transition: left 0.5s ease;
+}
+
+.contact-info-cards .single-contact-box:hover::before {
+    left: 100%;
+}
+
+.contact-info-cards .single-contact-box:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    background: rgba(255, 255, 255, 0.25);
+}
+
+.contact-info-cards .contact-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 60px;
+    height: 60px;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 50%;
+    text-align: center;
+    line-height: 60px;
+    margin-bottom: 0;
+    transition: all 0.3s ease;
+    flex-shrink: 0;
+}
+
+.contact-info-cards .single-contact-box:hover .contact-icon {
+    background: rgba(255, 255, 255, 0.3);
+    transform: scale(1.1);
+}
+
+.contact-info-cards .contact-icon i {
+    font-size: 24px;
+    color: white;
+}
+
+.contact-info-cards .contact-content h4 {
+    color: white;
+    font-size: 18px;
+    font-weight: 600;
+    margin-bottom: 8px;
+}
+
+.contact-info-cards .contact-content p {
+    color: rgba(255, 255, 255, 0.9);
+    font-size: 14px;
+    margin: 0;
+}
+
+.contact-info-cards .contact-content a {
+    color: rgba(255, 255, 255, 0.9);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.contact-info-cards .contact-content a:hover {
+    color: white;
+    text-decoration: underline;
+}
+
+/* Enhanced Form Styles */
+.single-contact-from-box {
+    background: white;
+    border-radius: 15px;
+    padding: 40px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+    border: 1px solid rgba(0, 0, 0, 0.05);
+    height: 100%;
+    min-height: 600px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    font-family: 'Cairo', sans-serif;
+}
+
+.form_box {
+    position: relative;
+    margin-bottom: 20px;
+}
+
+.form-title {
+    font-size: 20px;
+    font-weight: 600;
+    color: var(--secondary-color);
+    margin-bottom: 8px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    font-family: 'Cairo', sans-serif;
+}
+
+.form-control {
+    border: 2px solid #e9ecef;
+    border-radius: 8px;
+    padding: 12px 15px;
+    font-size: 14px;
+    transition: all 0.3s ease;
+    background: #f8f9fa;
+    font-family: 'Cairo', sans-serif;
+}
+
+.form-control:focus {
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 0.2rem rgba(var(--primary-color-rgb), 0.25);
+    background: white;
+    outline: none;
+}
+
+.form-control.is-invalid {
+    border-color: #dc3545;
+    box-shadow: 0 0 0 0.2rem rgba(220, 53, 69, 0.25);
+}
+
+.invalid-feedback {
+    display: block;
+    width: 100%;
+    margin-top: 5px;
+    font-size: 12px;
+    color: #dc3545;
+    font-weight: 500;
+}
+
+.invalid-feedback div {
+    margin-bottom: 2px;
+}
+
+/* Button Styles */
+.btn {
+    background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+    border: none;
+    border-radius: 30px;
+    padding: 15px 35px;
+    font-size: 16px;
+    font-weight: 600;
+    color: white;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+    display: inline-block;
+    text-decoration: none;
+    font-family: 'Cairo', sans-serif;
+}
+
+.btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+    transition: left 0.5s ease;
+}
+
+.btn:hover::before {
+    left: 100%;
+}
+
+.btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+}
+
+.btn:disabled {
+    opacity: 0.7;
+    cursor: not-allowed;
+    transform: none;
+}
+
+.btn i {
+    margin-left: 8px;
+    transition: transform 0.3s ease;
+}
+
+.btn:hover i {
+    transform: translateX(5px);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .contact-info-section {
+        margin-bottom: 30px;
+        padding: 30px 20px;
+        min-height: auto;
+    }
+    
+    .contact-info-section .section-main-title h2 {
+        font-size: 24px;
+    }
+    
+    .single-contact-from-box {
+        padding: 30px 20px;
+        min-height: auto;
+    }
+    
+    .contact-info-cards .single-contact-box {
+        padding: 20px 15px;
+    }
+    
+    .contact-info-cards .contact-icon {
+        width: 50px;
+        height: 50px;
+        line-height: 50px;
+    }
+    
+    .contact-info-cards .contact-icon i {
+        font-size: 20px;
+    }
+}
+
+@media (max-width: 576px) {
+    .contact-info-section {
+        padding: 25px 15px;
+        min-height: auto;
+    }
+    
+    .single-contact-from-box {
+        padding: 25px 15px;
+        min-height: auto;
+    }
+    
+    .btn {
+        padding: 12px 25px;
+        font-size: 14px;
+        width: 100%;
+    }
+    
+    .contact-info-section .section-main-title h2 {
+        font-size: 20px;
+    }
+} 

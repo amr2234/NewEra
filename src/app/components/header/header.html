@@ -1,0 +1,64 @@
+<div class="header-area {{headerStyle}}" id="sticky-header">
+	<div class="container-fluid">
+		<div class="row align-items-center d-flex">
+			<div class="col-lg-3">
+				<div class="header-logo">
+					<a class="main-logo" routerLink="/"><img src="assets/images/sitvalue.png" alt=""></a>
+					<a class="stiky-logo" routerLink="/"><img src="assets/images/sitvalue.png" alt=""></a>
+					<!-- Burger icon beside sticky logo, only on mobile -->
+
+				</div>
+			</div>
+			<div class="col-lg-9">
+				<nav class="sitvalue_menu">
+					<div class="header-menu">
+						<ul class="nav_scroll d-flex align-items-center">
+							<li><a routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">{{ 'HEADER_HOME' | translate }}</a></li>
+							<li><a routerLink="/" fragment="aboutUs">{{ 'HEADER_AboutUs' | translate }}</a></li>
+							<li><a routerLink="/" fragment="service">{{ 'HEADER_SERVICE' | translate }}</a></li>
+							<li><a routerLink="/contact" routerLinkActive="active">{{ 'HEADER_CONTACT' | translate }}</a></li>
+							<li>
+								<div *ngIf="currentLang !== 'en'" (click)="switchLang('en')" style="cursor:pointer; padding-left: 5px; display:flex; align-items:center; gap:5px;">
+									<img src="assets/images/us-flag.png" alt="English" style="width:40px; height:30px; margin-left: 8px;">
+									<span style="color: azure; font-size: 18px;">English</span>
+								</div>
+								<div *ngIf="currentLang !== 'ar'" (click)="switchLang('ar')" style="cursor:pointer; display:flex; align-items:center; gap:5px;">
+									<img src="assets/images/arabic-flag.png"  alt="Arabic" style="width:40px; height:30px; margin-right: 8px;">
+									<span style="color: azure; font-size: 18px;">العربية</span>
+								</div>
+							</li>
+						</ul>
+					</div>
+				</nav>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="mobile-menu-area d-sm-block d-md-block d-lg-none ">
+	<div class="mobile-menu" [class.open]="!isMobileMenuCollapsed">
+		<div class="mobile-menu-toggle" (click)="toggleMobileMenu()">
+			<span></span>
+		</div>
+		<nav class="sitvalue_menu" [class.collapsed]="isMobileMenuCollapsed">
+			<div class="header-menu">
+				<ul class="nav_scroll">
+					<li><a routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}" (click)="toggleMobileMenu()">{{ 'HEADER_HOME' | translate }}</a></li>
+					<li><a routerLink="/" fragment="aboutUs" (click)="toggleMobileMenu()">{{ 'HEADER_AboutUs' | translate }}</a></li>
+					<li><a routerLink="/" fragment="service" (click)="toggleMobileMenu()">{{ 'HEADER_SERVICE' | translate }}</a></li>
+					<li><a routerLink="/contact" routerLinkActive="active" (click)="toggleMobileMenu()">{{ 'HEADER_CONTACT' | translate }}</a></li>
+					<li>
+						<div *ngIf="currentLang !== 'en'" (click)="switchLang('en'); toggleMobileMenu()" style="cursor:pointer; padding-left: 5px; display:flex; align-items:center; gap:5px;">
+							<img src="assets/images/us-flag.png" alt="English" style="width:40px; height:30px; margin-left: 8px;">
+							<span style="color: azure; font-size: 18px;">English</span>
+						</div>
+						<div *ngIf="currentLang !== 'ar'" (click)="switchLang('ar'); toggleMobileMenu()" style="cursor:pointer; display:flex; align-items:center; gap:5px;">
+							<img src="assets/images/arabic-flag.png"  alt="Arabic" style="width:40px; height:30px; margin-right: 8px;">
+							<span style="color: azure; font-size: 18px;">العربية</span>
+						</div>
+					</li>
+				</ul>
+			</div>
+		</nav>
+	</div>
+</div>

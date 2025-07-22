@@ -1,0 +1,110 @@
+.slider-content {
+  padding-left: 5px;
+}
+
+/* Fix header design for RTL */
+body.rtl .header-area {
+  direction: rtl;
+  text-align: right;
+}
+
+body.rtl .header-area .sitvalue_menu {
+  float: left !important;
+}
+
+body.rtl .header-area .sitvalue_menu ul li {
+  float: right !important;
+}
+
+body.rtl .header-area .header-logo {
+  float: right !important;
+  margin-left: 0;
+  margin-right: 15px;
+}
+
+body.rtl .header-area .header-src-btn {
+  padding-right: 0;
+  padding-left: 32px;
+}
+
+body.rtl .header-area .nav_scroll {
+  text-align: right;
+}
+
+body.rtl .header-area .header-menu ul.nav_scroll li a {
+  padding-left: 0;
+  padding-right: 15px;
+}
+
+body.rtl .header-area .header-menu ul.nav_scroll li a:hover {
+  padding-left: 15px;
+  padding-right: 0;
+}
+
+body.rtl .slider-content h1,
+body.rtl .slider-content h4,
+body.rtl .slider-content p {
+  text-align: right;
+}
+
+body.rtl .slider-content h1 {
+  font-size: 120px;
+}
+
+
+body.rtl .slider-area .row.align-items-center {
+  flex-direction: row-reverse;
+}
+
+body.rtl .slider-area .col-lg-6:first-child {
+  order: 2;
+}
+body.rtl .slider-area .col-lg-6:last-child {
+  order: 1;
+}
+
+body.rtl .slider-area .slider-content,
+body.rtl .slider-area .slider-content h1,
+body.rtl .slider-area .slider-content h4,
+body.rtl .slider-area .slider-content p {
+  text-align: right !important;
+}
+
+
+
+
+body.rtl .slider-area .row.align-items-center {
+  flex-direction: row-reverse !important;
+}
+
+body.rtl .slider-area .col-lg-6:first-child {
+  order: 2 !important;
+}
+body.rtl .slider-area .col-lg-6:last-child {
+  order: 1 !important;
+}
+
+@media (min-width: 992px) {
+  body.rtl .slider-content {
+    text-align: right;
+    padding-right: 150px;
+    padding-left: 0 !important;
+  }
+}
+
+@media only screen and (min-width: 320px) and (max-width: 480px) {
+  body.rtl .slider-content {
+    padding-right: 20px !important;
+    padding-left: 0 !important;
+  }
+}
+
+
+body.rtl .slider-button a:before {
+    left: auto !important;
+    right: 0 !important;
+    border-radius: 30px;
+    transition: .5s;
+    background: var(--primary-color);
+    z-index: -1;
+}

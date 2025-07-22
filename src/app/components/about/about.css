@@ -1,0 +1,46 @@
+body.rtl .about-section,
+body.rtl .about-section * {
+  text-align: center ;
+  direction: rtl;
+}
+body.rtl .about-section .dreamit-section-main-title h1,
+body.rtl .about-section .dreamit-section-sub-title h5,
+body.rtl .about-section .dreamit-section-content-text p,
+body.rtl .about-section .about-content p {
+  text-align: center ;
+}
+body.rtl .about-section .single-about-icon-box {
+  flex-direction: row-reverse ;
+}
+body.rtl .about-section .about-btn {
+  text-align: start ;
+}
+
+/* Responsive adjustments for about section */
+@media (max-width: 991px) {
+  .about-section {
+    padding-top: 30px ;
+    padding-bottom: 40px ;
+  }
+  .dreamit-section-main-title h1 {
+    font-size: 2rem ;
+  }
+  .dreamit-section-content-text p {
+    font-size: 1rem ;
+  }
+}
+
+@media only screen and (min-width: 320px) and (max-width: 480px) {
+  .about-section {
+    padding-top: 20px ;
+    padding-bottom: 20px ;
+    text-align: center;
+  }
+  .dreamit-section-main-title h1 {
+    font-size: 2rem !important ;
+    text-align: center;
+  }
+  .dreamit-section-content-text p {
+    font-size: 1.2rem ;
+  }
+}

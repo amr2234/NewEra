@@ -1,0 +1,287 @@
+/* Header component styles */
+
+/* Base styles */
+.header-area {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.header-logo {
+  display: flex;
+  align-items: center;
+}
+
+.sitvalue_menu {
+  display: flex;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  flex-grow: 1;
+  justify-content: flex-start;
+}
+
+.sitvalue_menu ul {
+  display: flex;
+  padding: 0;
+  margin: 0;
+}
+
+.sitvalue_menu ul li {
+  margin-right: 20px;
+}
+body.rtl .sitvalue_menu ul li {
+  margin-right: 40px !important;
+}
+.sitvalue_menu ul li a {
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 25px;
+  transition: all 0.3s ease;
+  font-family: 'Cairo', sans-serif;
+  position: relative;
+  padding: 10px 15px;
+  border-radius: 5px;
+  text-align: start;
+}
+
+/* .sitvalue_menu ul li a:hover {
+  color: white;
+  background: rgba(255, 255, 255, 0.1);
+   transform: translateY(-2px)
+} */
+
+/* .sitvalue_menu ul li a.active {
+  color: white;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 10px;
+} */
+
+/* .sitvalue_menu ul li a::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  width: 0;
+  height: 2px;
+  background: white;
+  transition: all 0.3s ease;
+  transform: translateX(-50%);
+} */
+
+/* .sitvalue_menu ul li a:hover::after {
+  width: 100%;
+} */
+
+/* Language switch button container */
+.header-src-btn {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  white-space: nowrap;
+}
+
+/* RTL styles */
+body.rtl .header-area {
+  flex-direction: row-reverse;
+  text-align: right;
+}
+
+body.rtl .header-logo {
+  margin-left: 0;
+  margin-right: 15px;
+}
+
+/* Updated RTL menu alignment as per user request */
+
+
+
+
+
+body.rtl .header-src-btn {
+  padding-left: 0;
+  padding-right: 32px;
+  justify-content: flex-start;
+  margin-left: 15px;
+}
+
+/* Reverse the order of columns in header row for RTL */
+body.rtl .row.align-items-center.d-flex {
+  display: flex;
+  flex-direction: row-reverse;
+}
+
+/* Adjust column alignment */
+body.rtl .col-lg-3 {
+  order: 2;
+}
+
+body.rtl .col-lg-9 {
+  order: 1;
+}
+
+body.rtl ul.nav_scroll {
+  margin-right: 40px !important;
+}
+
+body.rtl .header-area ul.nav_scroll {
+  margin-right: 40px !important;
+}
+
+/* Mobile menu adjustments */
+.mobile-menu-area {
+  display: none;
+}
+
+/* Add slide-in animation for mobile menu */
+@keyframes slideInMenu {
+  from {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+/* Mobile menu logo area to match sticky header */
+.mobile-menu .header-logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* padding: 24px 0 12px 0; */
+  background: #fff;
+  border-bottom: 1px solid #eee;
+}
+
+.mobile-menu nav {
+  background-color: var(--secondary-color); /* match sticky header */
+  padding: 0;
+  position: fixed;
+  top: 0;
+  right: 0;
+  height: 100vh;
+  width: 70vw;
+  max-width: 320px;
+  z-index: 9999;
+  box-shadow: -2px 0 8px rgba(0,0,0,0.2);
+  transform: translateX(100%);
+  transition: transform 0.3s ease;
+  animation: none;
+  border-radius: 0 0 0 24px;
+}
+
+.mobile-menu nav:not(.collapsed) {
+  transform: translateX(0);
+  animation: slideInMenu 0.3s;
+}
+
+.mobile-menu nav.collapsed {
+  transform: translateX(100%);
+}
+
+.mobile-menu-toggle {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  cursor: pointer;
+  font-size: 32px;
+  color: #ffffff;
+  background: var(--secondary-color);
+  border-radius: 6px;
+  width: 48px;
+  height: 48px;
+  margin: 42px 15px -60px 15px;
+  box-shadow: 0 2px 8px rgba(255, 255, 255, 0.08);
+  z-index: 10000;
+  position: absolute;
+}
+
+/* Burger icon lines */
+.mobile-menu-toggle::before,
+.mobile-menu-toggle::after,
+.mobile-menu-toggle span {
+  content: '';
+  display: block;
+  height: 4px;
+  width: 28px;
+  background: #ffffff;
+  margin: 5px auto;
+  border-radius: 2px;
+  transition: all 0.3s;
+}
+.mobile-menu-toggle-stickey {
+  position: sticky;
+  top: 10px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.12);
+}
+
+.mobile-menu-toggle span {
+  margin: 0 auto;
+}
+
+/* Overlay for mobile menu */
+.mobile-menu.open::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0,0,0,0.4);
+  z-index: 9998;
+}
+
+@media (max-width: 991px) {
+  .mobile-menu-area {
+    display: block;
+  }
+  .header-area .sitvalue_menu {
+    display: none;
+  }
+  .mobile-menu .sitvalue_menu {
+    display: block;
+  }
+}
+
+/* Fix mobile menu visibility and add basic toggle */
+.mobile-menu {
+  position: relative;
+}
+
+.mobile-menu ul.nav_scroll {
+  list-style: none;
+  padding: 70px 10px;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.mobile-menu ul.nav_scroll li a {
+  color: #ffffff;
+  font-size: 25px;
+  text-decoration: none;
+  font-family: 'Cairo', sans-serif;
+  font-weight: 500;
+  padding: 10px 15px;
+  border-radius: 5px;
+  transition: all 0.3s;
+  display: block;
+}
+
+/* Add a hamburger icon for mobile menu toggle */
+.mobile-menu-toggle {
+  display: block;
+  cursor: pointer;
+  font-size: 24px;
+  color: white;
+  padding: 10px;
+  user-select: none;
+}
+
+/* Hide mobile menu by default, show on toggle */
+.mobile-menu.collapsed ul.nav_scroll {
+  display: none;
+}

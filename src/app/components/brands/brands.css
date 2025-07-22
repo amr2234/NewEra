@@ -1,0 +1,23 @@
+/*start brand section*/
+.brand-section {
+    background: #FFF6FA;
+    position: relative;
+    margin-top: -108px;
+}
+/*brand section style two*/
+.brand-section.style-two {
+    background: transparent;
+}
+.brand-section.style-two .row.upper5 {
+    border-top: 1px solid#E6EAEF;
+    padding-top: 102px;
+}
+.brand-thumb {
+    text-align: center;
+    padding: 20px 0;
+}
+.brand-thumb img {
+    max-width: 100%;
+    height: auto;
+    display: inline-block;
+}

@@ -1,0 +1,439 @@
+/* Contact Page Styles */
+
+/* Breadcrumb Section */
+.breatcome-area {
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    position: relative;
+    color: white;
+    font-family: 'Cairo', sans-serif;
+}
+
+/* RTL Support for Arabic */
+body.rtl .breatcome-area {
+    text-align: right;
+}
+
+body.rtl .breatcome-content {
+    text-align: right;
+}
+
+body.rtl .breatcome-content-title h1 {
+    text-align: right;
+}
+
+body.rtl .breatcome-content-text ul {
+    justify-content: flex-end;
+}
+
+body.rtl .breatcome-content-text ul li i {
+    margin-left: 0;
+    margin-right: 10px;
+    transform: rotate(180deg);
+}
+
+body.rtl .page-description-section {
+    text-align: right;
+}
+
+body.rtl .page-description-content h2 {
+    text-align: right;
+}
+
+body.rtl .page-description-content p {
+    text-align: right;
+}
+
+body.rtl .additional-contact-section {
+    text-align: right;
+}
+
+body.rtl .section-title {
+    text-align: right;
+}
+
+body.rtl .dreamit-section-sub-title h5 {
+    text-align: right;
+}
+
+body.rtl .section-main-title h2 {
+    text-align: right;
+}
+
+body.rtl .additional-contact-card {
+    text-align: right;
+    direction: rtl;
+}
+
+body.rtl .additional-contact-card .card-icon {
+    margin-left: 0;
+    margin-right: 0;
+}
+
+body.rtl .card-content h4 {
+    text-align: right;
+}
+
+body.rtl .card-content p {
+    text-align: right;
+}
+
+body.rtl .additional-contact-card .card-content {
+    text-align: right;
+}
+
+body.rtl .hours-list {
+    text-align: right;
+}
+
+body.rtl .hours-list li {
+    flex-direction: row-reverse;
+    text-align: right;
+}
+
+body.rtl .hours-list li span {
+    text-align: left;
+}
+
+body.rtl .support-info p {
+    text-align: right;
+}
+
+body.rtl .location-info p {
+    text-align: right;
+}
+
+body.rtl .btn-outline-primary {
+    text-align: center;
+}
+
+body.rtl .support-info {
+    text-align: right;
+}
+
+body.rtl .support-info p {
+    text-align: right;
+}
+
+body.rtl .location-info {
+    text-align: right;
+}
+
+body.rtl .location-info p {
+    text-align: right;
+}
+
+.breatcome-area::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, rgba(var(--primary-color-rgb), 0.8) 0%, rgba(var(--secondary-color-rgb), 0.8) 100%);
+    z-index: 1;
+}
+
+.breatcome-content {
+    position: relative;
+    z-index: 2;
+}
+
+.breatcome-content-title h1 {
+    font-size: 48px;
+    font-weight: 700;
+    margin-bottom: 20px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    font-family: 'Cairo', sans-serif;
+}
+
+.breatcome-content-text ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.breatcome-content-text ul li {
+    display: flex;
+    align-items: center;
+    margin: 0 10px;
+}
+
+.breatcome-content-text ul li a {
+    color: rgba(255, 255, 255, 0.9);
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.breatcome-content-text ul li a:hover,
+.breatcome-content-text ul li a.active {
+    color: white;
+    text-decoration: underline;
+}
+
+.breatcome-content-text ul li i {
+    font-size: 12px;
+    margin-left: 10px;
+    color: rgba(255, 255, 255, 0.7);
+}
+
+/* Page Description Section */
+.page-description-section {
+    background: #f8f9fa;
+}
+
+.page-description-content h2 {
+    font-size: 36px;
+    font-weight: 700;
+    color: var(--primary-color);
+    margin-bottom: 20px;
+    font-family: 'Cairo', sans-serif;
+}
+
+.page-description-content p {
+    font-size: 18px;
+    line-height: 1.6;
+    color: #666;
+    margin: 0;
+    font-family: 'Cairo', sans-serif;
+}
+
+.additional-contact-section {
+    background: white;
+}
+
+.section-title .dreamit-section-sub-title h5 {
+    color: var(--primary-color);
+    font-size: 16px;
+    font-weight: 500;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.section-title .section-main-title h2 {
+    font-size: 42px;
+    font-weight: 700;
+    color: rgba(var(--secondary-color-rgb), 0.8);
+    margin-bottom: 0;
+    text-align: center;
+}
+
+.section-title .section-main-title h2 span {
+    color: var(--secondary-color);
+}
+
+/* Additional Contact Cards */
+.additional-contact-card {
+    background: white;
+    border-radius: 15px;
+    padding: 40px 30px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+    border: 1px solid rgba(0, 0, 0, 0.05);
+    transition: all 0.3s ease;
+    height: 100%;
+    position: relative;
+    overflow: hidden;
+}
+
+.additional-contact-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+    transform: scaleX(0);
+    transition: transform 0.3s ease;
+}
+
+.additional-contact-card:hover::before {
+    transform: scaleX(1);
+}
+
+.additional-contact-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
+}
+
+.additional-contact-card .card-icon {
+    width: 80px;
+    height: 80px;
+    background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 25px;
+    transition: all 0.3s ease;
+}
+
+.additional-contact-card:hover .card-icon {
+    transform: scale(1.1) rotate(5deg);
+}
+
+.additional-contact-card .card-icon i {
+    font-size: 32px;
+    color: white;
+}
+
+.additional-contact-card .card-content h4 {
+    font-size: 30px;
+    font-weight: 700;
+    color: var(--secondary-color);
+    margin-bottom: 15px;
+    text-align: start;
+}
+
+.additional-contact-card .card-content p {
+    font-size: 20px;
+    line-height: 1.6;
+    color: var(--secondary-color);
+    margin-bottom: 20px;
+    text-align: start;
+}
+
+/* Hours List */
+.hours-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.hours-list li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 8px 0;
+    border-bottom: 1px solid #eee;
+    font-size: 14px;
+}
+
+.hours-list li:last-child {
+    border-bottom: none;
+}
+
+.hours-list li span {
+    font-weight: 600;
+    color: var(--primary-color);
+}
+
+/* Support Info */
+.support-info p {
+    margin-bottom: 10px;
+    font-size: 14px;
+}
+
+.support-info p strong {
+    color: var(--primary-color);
+}
+
+/* Location Info */
+.location-info p {
+    margin-bottom: 10px;
+    font-size: 14px;
+}
+
+.location-info p strong {
+    color: var(--primary-color);
+}
+
+.btn-outline-primary {
+    border: 2px solid var(--primary-color);
+    color: var(--primary-color);
+    background: transparent;
+    border-radius: 25px;
+    padding: 8px 20px;
+    font-size: 14px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    display: inline-block;
+    margin-top: 15px;
+}
+
+.btn-outline-primary:hover {
+    background: var(--primary-color);
+    color: white;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .breatcome-content-title h1 {
+        font-size: 36px;
+    }
+    
+    .breatcome-content-text ul {
+        flex-direction: column;
+    }
+    
+    .breatcome-content-text ul li {
+        margin: 5px 0;
+    }
+    
+    .page-description-content h2 {
+        font-size: 28px;
+    }
+    
+    .page-description-content p {
+        font-size: 16px;
+    }
+    
+    .section-title .dreamit-section-main-title h2 {
+        font-size: 32px;
+    }
+    
+    .additional-contact-card {
+        padding: 30px 20px;
+    }
+    
+    .additional-contact-card .card-icon {
+        width: 60px;
+        height: 60px;
+    }
+    
+    .additional-contact-card .card-icon i {
+        font-size: 24px;
+    }
+    
+    .additional-contact-card .card-content h4 {
+        font-size: 20px;
+    }
+}
+
+@media (max-width: 576px) {
+    .breatcome-content-title h1 {
+        font-size: 28px;
+    }
+    
+    .page-description-content h2 {
+        font-size: 24px;
+    }
+    
+    .section-title .dreamit-section-main-title h2 {
+        font-size: 28px;
+    }
+    
+    .additional-contact-card {
+        padding: 25px 15px;
+    }
+    
+    .hours-list li {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    
+    .hours-list li span {
+        margin-bottom: 5px;
+    }
+} 
