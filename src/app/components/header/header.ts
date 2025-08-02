@@ -69,9 +69,6 @@ if (mobileMenu) {
     });
   }
 
-  openSearch() {
-    $('.search-popup').addClass('search-active');
-  }
 
   get currentLang(): string {
     return this.translate.currentLang || this.translate.defaultLang || 'ar';

@@ -3,9 +3,59 @@
 @import './app/components/services/services.css';
 @import './app/components/footer/footer.css';
 
+/* Cairo Font Family */
+@font-face {
+    font-family: 'Cairo';
+    src: url('./assets/fonts/Cairo-Regular.ttf') format('truetype');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Cairo';
+    src: url('./assets/fonts/Cairo-Bold.ttf') format('truetype');
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Cairo';
+    src: url('./assets/fonts/Cairo-Light.ttf') format('truetype');
+    font-weight: 300;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Cairo';
+    src: url('./assets/fonts/Cairo-Medium.ttf') format('truetype');
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Cairo';
+    src: url('./assets/fonts/Cairo-SemiBold.ttf') format('truetype');
+    font-weight: 600;
+    font-style: normal;
+    font-display: swap;
+}
+
 :root {
     --primary-color: #9FC87E;
     --secondary-color: #075B5E;
+}
+
+/* Global Font Settings */
+* {
+    font-family: 'Cairo', sans-serif;
+}
+
+body {
+    font-family: 'Cairo', sans-serif !important;
 }
 
 /*TABLE OF CONTENTS*/
@@ -824,7 +874,7 @@ a#slider-27-slide-72-layer-6 {
     transition: .5s;
     position: relative;
     z-index: 1;
-    font-size: 25px;
+    font-size: 20px;
     padding: 10px 40px;
     border-radius: 30px;
 }
@@ -5271,7 +5321,4 @@ button:focus {
         }
     }
 
-    body.rtl .slider-content h1 {
-        font-size: 120px;
-    }
 }

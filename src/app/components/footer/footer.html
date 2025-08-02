@@ -1,30 +1,86 @@
 <footer class="footer-modern">
   <div class="footer-modern-container">
-    <img src="assets/images/sitvalue.png" alt="Logo" class="footer-modern-logo" />
-	<a class="stiky-logo" routerLink="/"><img src="assets/images/sitvalue.png" alt=""></a>
-    <div class="footer-modern-info-row fade-in">
-      <div class="footer-modern-info-item">
-        <div class="footer-modern-label">{{ 'FOOTER_OFFICE' | translate }}</div>
-        <div class="footer-modern-value">{{ 'FOOTER_OFFICE_NAME' | translate }}</div>
+    <div class="footer-main">
+      <div class="footer-section quick-links">
+        <h3>{{ 'FOOTER_QUICK_LINKS' | translate }}</h3>
+        <ul>
+          <li><a routerLink="/" routerLinkActive="active">{{ 'FOOTER_HOME' | translate }}</a></li>
+          <li><a routerLink="/" fragment="aboutUs">{{ 'FOOTER_ABOUT_US' | translate }}</a></li>
+          <li><a routerLink="/" fragment="service">{{ 'FOOTER_SERVICES' | translate }}</a></li>
+          <li><a routerLink="/contact" routerLinkActive="active">{{ 'FOOTER_CONTACT' | translate }}</a></li>
+        </ul>
       </div>
-      <div class="footer-modern-info-item">
-        <div class="footer-modern-label">{{ 'FOOTER_HOURS' | translate }}</div>
-        <div class="footer-modern-value">
-          {{ 'FOOTER_HOURS_DAYS' | translate }}<br>
-          {{ 'FOOTER_HOURS_TIME' | translate }}
+
+      <div class="footer-section contact-info">
+        <h3>{{ 'FOOTER_CONTACT_INFO' | translate }}</h3>
+        <div class="contact-item">
+          <i class="fas fa-map-marker-alt"></i>
+          <span>{{ 'FOOTER_OFFICE_NAME' | translate }}</span>
+        </div>
+        <div class="contact-item">
+          <i class="fas fa-phone"></i>
+          <span>{{ 'FOOTER_PHONE_NUMBER' | translate }}</span>
+        </div>
+        <div class="contact-item">
+          <i class="fas fa-envelope"></i>
+          <span>{{ 'FOOTER_EMAIL' | translate }}</span>
+        </div>
+        <div class="contact-item">
+          <i class="fas fa-clock"></i>
+          <span>{{ 'FOOTER_HOURS_DAYS' | translate }}<br>{{ 'FOOTER_HOURS_TIME' | translate }}</span>
         </div>
       </div>
-      <div class="footer-modern-info-item">
-        <div class="footer-modern-label">{{ 'FOOTER_CALL_US' | translate }}</div>
-        <div class="footer-modern-value">{{ 'FOOTER_PHONE_NUMBER' | translate }}</div>
+
+      <div class="footer-section newsletter">
+        <h3>{{ 'FOOTER_NEWSLETTER' | translate }}</h3>
+        <p>{{ 'FOOTER_NEWSLETTER_DESCRIPTION' | translate }}</p>
+        <form class="newsletter-form" (ngSubmit)="subscribeNewsletter()">
+          <div class="input-group">
+            <input 
+              type="email" 
+              placeholder="{{ 'FOOTER_EMAIL_PLACEHOLDER' | translate }}"
+              [(ngModel)]="newsletterEmail"
+              name="email"
+              required
+              class="newsletter-input"
+            />
+            <button type="submit" class="newsletter-btn">
+              <i class="fas fa-paper-plane"></i>
+            </button>
+          </div>
+        </form>
       </div>
-      <div class="footer-modern-info-item">
-        <div class="footer-modern-label">{{ 'FOOTER_EMAIL_LABEL' | translate }}</div>
-        <div class="footer-modern-value">{{ 'FOOTER_EMAIL' | translate }}</div>
+
+      <div class="footer-section company-info">
+        <div class="footer-logo-container">
+          <img src="assets/images/logo.png" alt="NewEra Logo" class="footer-logo" />
+        </div>
+  
+        <div class="social-media">
+          <a href="#" class="social-icon" aria-label="Facebook">
+            <i class="fab fa-facebook-f"></i>
+          </a>
+          <a href="#" class="social-icon" aria-label="Twitter">
+            <i class="fab fa-twitter"></i>
+          </a>
+          <a href="#" class="social-icon" aria-label="LinkedIn">
+            <i class="fab fa-linkedin-in"></i>
+          </a>
+          <a href="#" class="social-icon" aria-label="Instagram">
+            <i class="fab fa-instagram"></i>
+          </a>
+        </div>
       </div>
     </div>
-    <div class="footer-modern-bottom">
-      <span>{{ 'FOOTER_COPYRIGHT' | translate:{ year: currentYear } }}</span>
+
+    <div class="footer-bottom">
+      <div class="footer-bottom-content">
+        <span class="copyright">{{ 'FOOTER_COPYRIGHT' | translate:{ year: currentYear } }}</span>
+        <div class="footer-bottom-links">
+          <a routerLink="/privacy">{{ 'FOOTER_PRIVACY' | translate }}</a>
+          <a routerLink="/terms">{{ 'FOOTER_TERMS' | translate }}</a>
+        </div>
+      </div>
     </div>
   </div>
 </footer>

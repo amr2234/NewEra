@@ -3,7 +3,7 @@ import { FormBuilder, FormGroup, FormsModule, ReactiveFormsModule, Validators } 
 import { Router } from '@angular/router';
 import Swal from 'sweetalert2';
 import emailjs from '@emailjs/browser';
-import { TranslateModule } from '@ngx-translate/core';
+import { TranslateModule, TranslateService } from '@ngx-translate/core';
 import { CommonModule } from '@angular/common';
 import { Subject } from 'rxjs';
 
@@ -40,7 +40,11 @@ export class ContactUsComponent implements OnInit {
     }
   ];
 
-  constructor(private fb: FormBuilder, private router: Router) {}
+  constructor(
+    private fb: FormBuilder, 
+    private router: Router,
+    private translate: TranslateService
+  ) {}
 
   ngOnInit() {
     this.initForm();
@@ -51,12 +55,10 @@ export class ContactUsComponent implements OnInit {
       name: ['', [Validators.required, Validators.minLength(2)]],
       email: ['', [Validators.required, Validators.email]],
       phone: ['', [Validators.required, Validators.pattern(/^\+?[0-9]{7,15}$/)]],
-      subject : [''],
-      message : [''],
-     });
+      subject: ['', [Validators.required, Validators.minLength(3)]],
+      message: ['', [Validators.required, Validators.minLength(10)]],
+    });
   }
-
-
 
   onSubmit() {
     this.submitted = true;
@@ -70,16 +72,16 @@ export class ContactUsComponent implements OnInit {
       from_name: formData.name,
       from_email: formData.email,
       phone: formData.phone,
-      subject: formData.subject === '' ? 'no Content':formData.subject ,
-      message: formData.message === '' ? 'no Content': formData.message 
+      subject: formData.subject,
+      message: formData.message
     }, 'LzLhvnoKZMgVK_A-u')
       .then(() => {
         this.isLoading = false;
         Swal.fire({
           icon: 'success',
-          title: 'Message Sent!',
-          text: 'Your message has been sent successfully.',
-          confirmButtonText: 'OK',
+          title: this.translate.instant('CONTACT_SUCCESS_TITLE'),
+          text: this.translate.instant('CONTACT_SUCCESS_MESSAGE'),
+          confirmButtonText: this.translate.instant('CONTACT_OK'),
         }).then(() => {
           this.router.navigate(['/']);
         });
@@ -90,8 +92,8 @@ export class ContactUsComponent implements OnInit {
         this.isLoading = false;
         Swal.fire({
           icon: 'error',
-          title: 'Oops...',
-          text: 'Something went wrong. Please try again later.'
+          title: this.translate.instant('CONTACT_ERROR_TITLE'),
+          text: this.translate.instant('CONTACT_ERROR_MESSAGE')
         });
       });
   }

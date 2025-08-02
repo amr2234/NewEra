@@ -18,7 +18,6 @@ export class ServicesComponent implements OnInit {
   }
 
   private initializeServices() {
-    // Initialize WOW.js for animations
     if (typeof (window as any).WOW !== 'undefined') {
       new (window as any).WOW().init();
     }

@@ -62,6 +62,7 @@
     font-size: 20px;
   }
 }
+
 /* Carousel Styles */
 .technologies-carousel-wrapper {
   position: relative;
@@ -77,13 +78,39 @@
 
 .carousel-track {
   display: flex;
-  animation: scroll 30s linear infinite;
   width: calc(220px * 24); /* 12 items * 2 sets * (200px + 20px gap) each */
-  gap: 20px; /* Add gap between items */
+  gap: 20px;
+  animation: scroll-left 30s linear infinite;
+  will-change: transform;
 }
 
 .carousel-track:hover {
   animation-play-state: paused;
+}
+
+/* RTL Support for Arabic */
+.carousel-track.rtl {
+  animation: scroll-right 30s linear infinite;
+  direction: rtl;
+}
+
+/* Animation keyframes */
+@keyframes scroll-left {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(calc(-220px * 12));
+  }
+}
+
+@keyframes scroll-right {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(calc(220px * 12));
+  }
 }
 
 .technology-item {
@@ -156,16 +183,6 @@
   font-family: 'Cairo', sans-serif;
 }
 
-/* Infinite scroll animation */
-@keyframes scroll {
-  0% {
-    transform: translateX(0);
-  }
-  100% {
-    transform: translateX(calc(-220px * 12)); /* Move by exactly half the total width for seamless loop */
-  }
-}
-
 /* RTL Support */
 body.rtl .technologies-section .dreamit-section-sub-title h5 {
   text-align: right;
@@ -181,22 +198,6 @@ body.rtl .technologies-section .dreamit-section-content-text p {
 
 body.rtl .technology-item {
   text-align: center;
-}
-
-/* RTL Carousel Animation */
-body.rtl .carousel-track,
-.carousel-track.rtl-track {
-  animation: scroll-rtl 30s linear infinite;
-  direction: rtl;
-}
-
-@keyframes scroll-rtl {
-  0% {
-    transform: translateX(0);
-  }
-  100% {
-    transform: translateX(calc(220px * 12)); /* Move right for RTL */
-  }
 }
 
 /* Responsive Styles */
@@ -227,35 +228,4 @@ body.rtl .carousel-track,
   .technology-logo {
     height: 50px;
   }
-}
-
-/* Animation for carousel items */
-@keyframes slideInFromRight {
-  from {
-    transform: translateX(100%);
-    opacity: 0;
-  }
-  to {
-    transform: translateX(0);
-    opacity: 1;
-  }
-}
-
-@keyframes slideInFromLeft {
-  from {
-    transform: translateX(-100%);
-    opacity: 0;
-  }
-  to {
-    transform: translateX(0);
-    opacity: 1;
-  }
-}
-
-.technologies-carousel .owl-item {
-  animation: slideInFromRight 0.6s ease-out;
-}
-
-.technologies-carousel .owl-item:nth-child(even) {
-  animation: slideInFromLeft 0.6s ease-out;
 } 

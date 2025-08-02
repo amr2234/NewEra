@@ -1,5 +1,5 @@
 .slider-content {
-  padding-left: 5px;
+  padding-left: 100px;
 }
 
 /* Fix header design for RTL */
@@ -48,7 +48,7 @@ body.rtl .slider-content p {
 }
 
 body.rtl .slider-content h1 {
-  font-size: 120px;
+  font-size: 90px;
 }
 
 
